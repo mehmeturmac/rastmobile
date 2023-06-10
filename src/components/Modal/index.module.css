@@ -1,0 +1,84 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  padding-top: 200px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.close {
+  float: right;
+  border-radius: 8px;
+  display: flex;
+}
+
+.close:hover,
+.close:focus {
+  background-color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form {
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #888;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 500;
+  filter: drop-shadow(1px 3px 1px rgb(0 0 0 / 0.1));
+}
+
+.form > div {
+  margin-top: 25px;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 38px;
+  border: 1px solid #d9d9d9;
+  margin-top: 10px;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.buttonGroup {
+  margin-top: 40px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
+.buttonGroup button {
+  border-radius: 34px;
+  margin-left: 17px;
+  padding: 10px 15px;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.cancel {
+  background-color: #f5f7ff;
+  color: #744bfc;
+}
+
+.submit {
+  background-color: #744bfc;
+  color: #fff;
+}
+
+.submit:hover,
+.cancel:hover {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}

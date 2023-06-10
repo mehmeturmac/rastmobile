@@ -6,8 +6,8 @@ import close from '../../assets/close.svg';
 export default function Modal() {
   return (
     <div className={styles.modal}>
-      <form>
-        <span>
+      <form className={styles.form}>
+        <span className={styles.close}>
           <img src={close} alt="close" />
         </span>
         <div>
@@ -22,8 +22,10 @@ export default function Modal() {
           Açıklama
           <input type="text" />
         </div>
-        <button>Vazgeç</button>
-        <button>Kaydet</button>
+        <div className={styles.buttonGroup}>
+          <button className={styles.cancel}>Vazgeç</button>
+          <button className={styles.submit}>Kaydet</button>
+        </div>
       </form>
     </div>
   );
