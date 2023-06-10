@@ -30,10 +30,10 @@ export default function DGrid() {
             <img src={filter} alt="filter" />
           </span>
         </div>
-        <span className={styles.button} onClick={() => setStatus(true)}>
+        <button className={styles.button} onClick={() => setStatus(true)}>
           <img src={plus} alt="plus" />
           Yeni Hesap Ekle
-        </span>
+        </button>
       </div>
       <DataGrid
         dataSource={filteredDatas}

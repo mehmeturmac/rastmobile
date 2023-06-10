@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: display 1s;
 }
 
 .center {
@@ -13,12 +14,14 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  transition: width 1s;
 }
 
 .center ul a {
   padding: 10px;
   border-radius: 8px;
   color: #000;
+  user-select: none;
 }
 
 .right {
@@ -56,6 +59,7 @@
   padding: 10px 5px;
   width: 100%;
   color: #000;
+  user-select: none;
 }
 
 .menuSocial {
@@ -86,9 +90,11 @@
 @media screen and (max-width: 1200px) {
   .nav {
     padding: 30px 50px;
+    transition: padding 1s;
   }
   .center {
     width: 80%;
+    transition: width 1s;
   }
   .right {
     position: absolute;
@@ -100,6 +106,7 @@
 @media screen and (max-width: 800px) {
   .nav {
     padding: 30px;
+    transition: padding 1s;
   }
   .right,
   .center {

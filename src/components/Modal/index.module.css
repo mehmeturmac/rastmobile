@@ -15,13 +15,14 @@
   float: right;
   border-radius: 8px;
   display: flex;
+  transition: background-color 0.5s;
 }
 
 .close:hover,
 .close:focus {
   background-color: #888;
-  text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.5s;
 }
 
 .form {
@@ -34,6 +35,7 @@
   font-size: 13px;
   font-weight: 500;
   filter: drop-shadow(1px 3px 1px rgb(0 0 0 / 0.1));
+  transition: width 1s;
 }
 
 .form > div {
@@ -69,28 +71,32 @@
 }
 
 .cancel {
+  order: 0;
   background-color: #f5f7ff;
   color: #744bfc;
 }
 
 .submit {
+  order: 1;
   background-color: #744bfc;
   color: #fff;
 }
 
 .submit:hover,
 .cancel:hover {
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  filter: drop-shadow(1px 3px 1px rgb(0 0 0 / 0.4));
 }
 
 @media screen and (max-width: 1200px) {
   .form {
     width: 450px;
+    transition: width 1s;
   }
 }
 
 @media screen and (max-width: 800px) {
   .form {
-    width: 350px;
+    width: 320px;
+    transition: width 1s;
   }
 }

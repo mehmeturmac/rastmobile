@@ -4,6 +4,7 @@
   margin: 0 30px;
   padding: 40px 70px;
   height: 85vh;
+  transition: padding 1s, margin 1s;
 }
 
 .controls {
@@ -22,7 +23,7 @@
   padding: 10px 30px;
   width: 380px;
   border: none;
-  text-decoration-style: none;
+  transition: width 1s;
 }
 
 .search:focus {
@@ -59,20 +60,23 @@
   justify-content: space-between;
   font-size: 14px;
   margin-bottom: 10px;
+  border: none;
 }
 
 .button:hover,
 .left > *:hover {
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  filter: drop-shadow(1px 3px 1px rgb(0 0 0 / 0.4));
 }
 
 @media screen and (max-width: 1200px) {
   .dgrid {
     margin: 0 20px;
     padding: 40px 40px;
+    transition: padding 1s, margin 1s;
   }
   .search {
     width: 300px;
+    transition: width 1s;
   }
 }
 
@@ -80,8 +84,13 @@
   .dgrid {
     margin: 0 5px;
     padding: 40px 10px;
+    transition: padding 1s, margin 1s;
   }
   .controls {
     flex-direction: column;
+  }
+  .button {
+    width: auto;
+    max-width: 390px;
   }
 }

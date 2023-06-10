@@ -43,11 +43,11 @@ export default function Modal() {
           <input type="text" onChange={(e: any) => setFormData({ ...formData, description: e.target.value })} />
         </div>
         <div className={styles.buttonGroup}>
-          <button className={styles.cancel} onClick={() => setStatus(false)}>
-            Vazgeç
-          </button>
           <button className={styles.submit} onClick={handleSubmit}>
             Kaydet
+          </button>
+          <button className={styles.cancel} onClick={() => setStatus(false)}>
+            Vazgeç
           </button>
         </div>
       </form>
