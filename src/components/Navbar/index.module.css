@@ -18,6 +18,7 @@
 .center ul a {
   padding: 10px;
   border-radius: 8px;
+  color: #000;
 }
 
 .right {
@@ -40,7 +41,7 @@
 
 .menu {
   display: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px;
 }
 
 .menu ul {
@@ -54,6 +55,7 @@
 .menu ul a {
   padding: 10px 5px;
   width: 100%;
+  color: #000;
 }
 
 .menuSocial {

@@ -1,0 +1,32 @@
+.dgrid {
+  background: linear-gradient(180deg, #eff2ff -30.56%, rgba(232, 236, 255, 0) 135.85%);
+  border-radius: 6px;
+  margin: 0 30px;
+  padding: 40px 70px;
+}
+
+.button {
+  background-color: #744bfc;
+  color: #fff;
+  border-radius: 40px;
+  padding: 10px 20px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+  .dgrid {
+    margin: 0 20px;
+    padding: 40px 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .dgrid {
+    margin: 0 5px;
+    padding: 40px 10px;
+  }
+}
