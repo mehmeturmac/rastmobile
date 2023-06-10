@@ -1,6 +1,6 @@
 'use client'; // This is a client component
 import { useContext } from 'react';
-import { DataGrid, Paging, Pager, Column } from 'devextreme-react/data-grid';
+import { DataGrid, Paging, Pager, Selection, Column } from 'devextreme-react/data-grid';
 import styles from './index.module.css';
 
 // Context
@@ -16,7 +16,7 @@ import filter from '../../assets/filter.svg';
 import Modal from '../Modal';
 
 export default function DGrid() {
-  const { datas, status, setStatus } = useContext(MainContext) as MainContextType;
+  const { datas, removeData, status, setStatus } = useContext(MainContext) as MainContextType;
 
   return (
     <div className={styles.dgrid}>
@@ -35,9 +35,18 @@ export default function DGrid() {
           Yeni Hesap Ekle
         </span>
       </div>
-      <DataGrid dataSource={datas} keyExpr="id" rowAlternationEnabled={true} showBorders={false}>
+      <DataGrid
+        dataSource={datas}
+        keyExpr="id"
+        rowAlternationEnabled={true}
+        hoverStateEnabled={true}
+        onRowClick={(e: any) => {
+          if (window.confirm('Silinsin mi?')) removeData(e.data.id);
+        }}
+      >
         <Paging defaultPageSize={10} />
         <Pager showPageSizeSelector={true} allowedPageSizes={10} showNavigationButtons={true} visible={true} />
+        <Selection mode="single" />
         <Column dataField="socialLink" caption="Sosyal Medya Linki" />
         <Column dataField="socialName" caption="Sosyal Medya Adı" />
         <Column dataField="description" caption="Açıklama" />

@@ -9,6 +9,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* Datagrid */
 .dx-widget,
 .dx-datagrid {
   border-radius: 8px;
