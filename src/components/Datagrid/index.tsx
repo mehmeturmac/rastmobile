@@ -1,7 +1,11 @@
 'use client'; // This is a client component
-import { useState } from 'react';
+import { useContext } from 'react';
 import { DataGrid, Paging, Pager, Column } from 'devextreme-react/data-grid';
 import styles from './index.module.css';
+
+// Context
+import { MainContext } from '../../context/mainContext';
+import { MainContextType } from '../../context/@types.main';
 
 // Assets
 import plus from '../../assets/plus.svg';
@@ -11,11 +15,8 @@ import filter from '../../assets/filter.svg';
 // Modal
 import Modal from '../Modal';
 
-// sampleData
-import sampleData from '../../data.json';
-
 export default function DGrid() {
-  const [data, setData] = useState<any>(sampleData);
+  const { datas, status, setStatus } = useContext(MainContext) as MainContextType;
 
   return (
     <div className={styles.dgrid}>
@@ -29,19 +30,19 @@ export default function DGrid() {
             <img src={filter} alt="filter" />
           </span>
         </div>
-        <span className={styles.button}>
+        <span className={styles.button} onClick={() => setStatus(true)}>
           <img src={plus} alt="plus" />
           Yeni Hesap Ekle
         </span>
       </div>
-      <DataGrid dataSource={data} keyExpr="id" rowAlternationEnabled={true} showBorders={false}>
+      <DataGrid dataSource={datas} keyExpr="id" rowAlternationEnabled={true} showBorders={false}>
         <Paging defaultPageSize={10} />
         <Pager showPageSizeSelector={true} allowedPageSizes={10} showNavigationButtons={true} visible={true} />
         <Column dataField="socialLink" caption="Sosyal Medya Linki" />
         <Column dataField="socialName" caption="Sosyal Medya Adı" />
         <Column dataField="description" caption="Açıklama" />
       </DataGrid>
-      <Modal />
+      {status && <Modal />}
     </div>
   );
 }
