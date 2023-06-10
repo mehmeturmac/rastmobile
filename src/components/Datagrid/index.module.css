@@ -3,6 +3,49 @@
   border-radius: 6px;
   margin: 0 30px;
   padding: 40px 70px;
+  height: 85vh;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search {
+  border-radius: 40px 0 0 40px;
+  padding: 10px 30px;
+  width: 380px;
+  border: none;
+  text-decoration-style: none;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.searchButton {
+  background-color: #744bfc;
+  color: #fff;
+  border-radius: 0 40px 40px 0;
+  padding: 10px;
+  width: 40px;
+  display: flex;
+}
+
+.filterButton {
+  background-color: #fff;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 40px;
+  margin-left: 10px;
 }
 
 .button {
@@ -10,11 +53,17 @@
   color: #fff;
   border-radius: 40px;
   padding: 10px 20px;
-  width: 120px;
+  width: 175px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.button:hover,
+.left > *:hover {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
 @media screen and (max-width: 1200px) {
@@ -22,11 +71,17 @@
     margin: 0 20px;
     padding: 40px 40px;
   }
+  .search {
+    width: 300px;
+  }
 }
 
 @media screen and (max-width: 800px) {
   .dgrid {
     margin: 0 5px;
     padding: 40px 10px;
+  }
+  .controls {
+    flex-direction: column;
   }
 }
