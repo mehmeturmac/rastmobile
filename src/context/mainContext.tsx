@@ -31,8 +31,18 @@ export const MainProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setDatas(newDatas);
   };
 
+  // Filter
+
+  const [filteredDatas, setFilteredDatas] = React.useState<IData[]>(datas);
+
+  const filterData = (key: string) => {
+    const filter = datas.filter((data) => data.socialLink.includes(key) || data.socialName.includes(key) || data.description.includes(key));
+    setFilteredDatas(filter);
+  };
+
   React.useEffect(() => {
     localStorage.setItem('rastmobile', JSON.stringify(datas));
+    setFilteredDatas(datas);
   }, [datas]);
 
   const values = {
@@ -41,6 +51,8 @@ export const MainProvider: React.FC<{ children: React.ReactNode }> = ({ children
     status,
     setStatus,
     removeData,
+    filteredDatas,
+    filterData,
   };
 
   return <MainContext.Provider value={values}>{children}</MainContext.Provider>;

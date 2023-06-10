@@ -16,13 +16,13 @@ import filter from '../../assets/filter.svg';
 import Modal from '../Modal';
 
 export default function DGrid() {
-  const { datas, removeData, status, setStatus } = useContext(MainContext) as MainContextType;
+  const { filterData, filteredDatas, removeData, status, setStatus } = useContext(MainContext) as MainContextType;
 
   return (
     <div className={styles.dgrid}>
       <div className={styles.controls}>
         <div className={styles.left}>
-          <input type="text" className={styles.search} placeholder="Search objects..." />
+          <input type="text" className={styles.search} placeholder="Search objects..." onChange={(e: any) => filterData(e.target.value)} />
           <span className={styles.searchButton}>
             <img src={search} alt="search" />
           </span>
@@ -36,7 +36,7 @@ export default function DGrid() {
         </span>
       </div>
       <DataGrid
-        dataSource={datas}
+        dataSource={filteredDatas}
         keyExpr="id"
         rowAlternationEnabled={true}
         hoverStateEnabled={true}
