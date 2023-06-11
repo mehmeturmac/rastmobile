@@ -22,10 +22,12 @@ export default function DGrid() {
     <div className={styles.dgrid}>
       <div className={styles.controls}>
         <div className={styles.left}>
-          <input type="text" className={styles.search} placeholder="Search objects..." onChange={(e: any) => filterData(e.target.value)} />
-          <span className={styles.searchButton}>
-            <img src={search} alt="search" />
-          </span>
+          <div className={styles.searchBox}>
+            <input type="text" className={styles.search} placeholder="Search objects..." onChange={(e: any) => filterData(e.target.value)} />
+            <span className={styles.searchButton}>
+              <img src={search} alt="search" />
+            </span>
+          </div>
           <span className={styles.filterButton}>
             <img src={filter} alt="filter" />
           </span>
